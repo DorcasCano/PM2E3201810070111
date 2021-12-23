@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:PM2E3201810070111.ViewModels"
+             x:Class="PM2E3201810070111.Views.DeleteOrUpdate">
+
+
+    <ContentPage.BindingContext>
+        <vm:PagosViewModels />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <Label Text="ID" Grid.Row="0" Grid.Column="0" />
+            <Entry Placeholder="" Grid.Row="0" Grid.Column="1" Text="{Binding Id_pago}" IsReadOnly="True"/>
+            
+            <Label Text="Descripcion" Grid.Row="1" Grid.Column="0" />
+            <Entry Placeholder="" Grid.Row="1" Grid.Column="1" Text="{Binding Descripcion}"/>
+
+            <Label Text="Monto" Grid.Row="2" Grid.Column="0" />
+            <Entry Placeholder="" Grid.Row="2" Grid.Column="1" Text="{Binding Monto}"/>
+
+            <Label Text="Fecha" Grid.Row="3" Grid.Column="0" />
+            <Entry Placeholder="" Grid.Row="3" Grid.Column="1" Text="{Binding Fecha}" />
+
+            <Label Text="Imagen" Grid.Row="4" Grid.Column="0" />
+            <Image Source="logo.png" Grid.Row="4" Grid.Column="1" x:Name="imagen"/>
+
+            <Button Text="sacar imagen" Grid.Row="5" Grid.Column="0" Clicked="Button_Clicked"/>
+
+            <Button Text="Eliminar" Grid.Row="6" Grid.Column="0" Command="{Binding EliminarCommand}"/>
+            <Button Text="Modificar" Grid.Row="6" Grid.Column="1" Command="{Binding ModificarCommand}"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
